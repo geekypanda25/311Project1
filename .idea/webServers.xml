@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="80d34801-b75b-4fe7-8a10-1b1d47de7642" name="https://github.com/geekypanda25/311Project1.git" url="https://github.com/geekypanda25/311Project1.git">
+        <fileTransfer host="https://github.com/geekypanda25/311Project1.git" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
