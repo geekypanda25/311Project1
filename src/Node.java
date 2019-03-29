@@ -1,51 +1,59 @@
 public class Node {
 
-    int key = -1, color = 1;
-    Node left = nil, right = nil, parent = nil;
+    private int key = -1, color = 1;
+    private Node left = null, right = null, parent = null;
 
-    Node(int key) {
+    public Node(int key) {
         this.key = key;
     }
 
-    Node getParent(){
+    public Node getParent(){
 
-        }
+        return null;
+    }
 
-    Node getLeft(){
+    public Node getLeft(){
 
-        }
+        return null;
+    }
 
-    Node getRight(){
+    public Node getRight(){
 
-        }
+        return null;
+    }
 
-    int getKey(){
+    public int getKey(){
 
-        }
+        return 0;
+    }
 
-    int getP(){
+    public int getP(){
 
-        }
+        return 0;
+    }
 
-    int getVal(){
+    public int getVal(){
 
-        }
+        return 0;
+    }
 
-    int getMaxVal(){
+    public int getMaxVal(){
 
-        }
+        return 0;
+    }
 
-    Endpoint getEndpoint(){
+    public Endpoint getEndpoint(){
 
-        }
+        return null;
+    }
 
-    Endpoint getEmax(){
+    public Endpoint getEmax(){
 
-        }
+        return null;
+    }
 
-    int getColor(){
+    public int getColor(){
 
         return color;
-
-        }
+    }
 }

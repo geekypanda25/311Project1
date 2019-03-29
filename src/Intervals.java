@@ -4,7 +4,7 @@ public class Intervals {
 
 
     private int currID;
-    private Interval currInterval;
+    private Interval currInterval = null;
     private ArrayList<Interval> IntervalArray = new ArrayList<>();
 
 
@@ -16,8 +16,12 @@ public class Intervals {
 
     public void intervalInsert(int a, int b) {
 
+        // creates two new Endpoint objects based on the endpoint values
+        Endpoint leftE = new Endpoint(a);
+        Endpoint rightE = new Endpoint(b);
+
         // add new Interval object to the IntervalArray
-        currInterval = new Interval(a, b, currID);
+        currInterval = new Interval(leftE, rightE, currID);
         IntervalArray.add(currInterval);
         currID++;
     }

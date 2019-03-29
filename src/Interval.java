@@ -1,32 +1,33 @@
 public class Interval {
 
-    private int a, b, ID;
+    private int ID;
+    private Endpoint left, right;
 
 
     /**
      * Constructs Interval object to hold information about an
      *   instance of any Interval.
-     * @param a
-     * The Interval's left endpoint value
-     * @param b
-     * The Interval's right endpoint value
+     * @param left
+     * The Interval's left endpoint
+     * @param right
+     * The Interval's right endpoint
      * @param ID
      * The Interval's unique ID
      */
-    public Interval(int a, int b, int ID) {
-        this.a = a;
-        this.b = b;
+    public Interval(Endpoint left, Endpoint right, int ID) {
+        this.left = left;
+        this.right = right;
         this.ID = ID;
     }
 
 
-    public int getA() {
-        return a;
+    public Endpoint getLeft() {
+        return left;
     }
 
 
-    public int getB() {
-        return b;
+    public Endpoint getRight() {
+        return right;
     }
 
 
