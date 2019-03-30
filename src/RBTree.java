@@ -65,61 +65,61 @@ public class RBTree{
     public void fixTree(Node node) {
         while (node.getParent().getColor() == RED) {
             Node uncle = NILNode;
-            if (node.getParent() == node.getParent().getParent().left) {
-                uncle = node.getParent().getParent().right;
+            if (node.getParent() == node.getParent().getParent().getLeft()) {
+                uncle = node.getParent().getParent().getRight();
 
                 if (uncle != NILNode && uncle.getColor() == RED) {
-                    node.getParent().getColor() = BLACK;
-                    uncle.getColor() = BLACK;
-                    node.getParent().getParent().getColor() = RED;
+                    node.getParent().setColor(BLACK);
+                    uncle.setColor(BLACK);
+                    node.getParent().getParent().setColor(RED);
                     node = node.getParent().getParent();
                     continue;
                 }
-                if (node == node.getParent().right) {
+                if (node == node.getParent().getRight()) {
                     //Double rotation needed
                     node = node.getParent();
                     rotateLeft(node);
                 }
-                node.getParent().getColor() = BLACK;
-                node.getParent().getParent().getColor() = RED;
+                node.getParent().setColor(BLACK);
+                node.getParent().getParent().setColor(RED);
                 //if the "else if" code hasn't executed, this
                 //is a case where we only need a single rotation
                 rotateRight(node.getParent().getParent());
             } else {
-                uncle = node.getParent().getParent().left;
+                uncle = node.getParent().getParent().getLeft();
                 if (uncle != NILNode && uncle.getColor() == RED) {
-                    node.getParent().getColor() = BLACK;
-                    uncle.getColor() = BLACK;
-                    node.getParent().getParent().getColor() = RED;
+                    node.getParent().setColor(BLACK);
+                    uncle.setColor(BLACK);
+                    node.getParent().getParent().setColor(RED);
                     node = node.getParent().getParent();
                     continue;
                 }
-                if (node == node.getParent().left) {
+                if (node == node.getParent().getLeft()) {
                     //Double rotation needed
                     node = node.getParent();
                     rotateRight(node);
                 }
-                node.getParent().getColor() = BLACK;
-                node.getParent().getParent().getColor() = RED;
+                node.getParent().setColor(BLACK);
+                node.getParent().getParent().setColor(RED);
                 //if the "else if" code hasn't executed, this
                 //is a case where we only need a single rotation
                 rotateLeft(node.getParent().getParent());
             }
         }
-        root.getColor() = BLACK;
+        root.setColor(BLACK);
     }
 
     public void rotateLeft(Node node) {
         if (node.getParent() != NILNode) {
-            if (node == node.getParent().left) {
-                node.getParent().left = node.right;
+            if (node == node.getParent().getLeft()) {
+                node.getParent().setLeft(node.getRight());
             } else {
-                node.getParent().right = node.right;
+                node.getParent().setRight(node.getRight());
             }
-            node.right.getParent() = node.getParent();
-            node.getParent() = node.right;
-            if (node.right.left != NILNode) {
-                node.right.left.getParent() = node;
+            node.getRight().setParent(node.getParent());
+            node.setParent(node.getRight());
+            if (node.getRight().getLeft() != NILNode) {
+                node.getRight().getLeft().setParent(node);
             }
             node.right = node.right.left;
             node.getParent().left = node;

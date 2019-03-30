@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f4c64367-a565-4502-974a-2ae39594375b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Intervals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Intervals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBOperationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RBOperationsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RBTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RBTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RBTreeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RBTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            <state relative-caret-position="2478">
+              <caret line="118" column="39" lean-forward="true" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
               <folding>
                 <element signature="e#265#266#0" expanded="true" />
                 <element signature="e#292#293#0" expanded="true" />
@@ -140,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/Intervals.java" />
         <option value="$PROJECT_DIR$/src/RBTreeTest.java" />
         <option value="$PROJECT_DIR$/src/RBOperationsTest.java" />
-        <option value="$PROJECT_DIR$/src/RBTree.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/src/RBTree.java" />
       </list>
     </option>
   </component>
@@ -184,7 +180,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553922066449" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553922631480" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -237,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553918505918</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Edited RBTree insert as well as test classes.">
+      <created>1553922652575</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553922652575</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -285,7 +288,8 @@
     <MESSAGE value="Initial commit of RBTree methods" />
     <MESSAGE value="Initial commit of RBTree methods." />
     <MESSAGE value="Edited Node class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited Node class" />
+    <MESSAGE value="Edited RBTree insert as well as test classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited RBTree insert as well as test classes." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Interval.java">
@@ -367,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RBTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        <state relative-caret-position="2478">
+          <caret line="118" column="39" lean-forward="true" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
           <folding>
             <element signature="e#265#266#0" expanded="true" />
             <element signature="e#292#293#0" expanded="true" />
