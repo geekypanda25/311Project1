@@ -8,52 +8,54 @@ public class Node {
     private Endpoint endpoint, eMax;
 
 
-    public Node(int key) {
-        this.key = key;
+    public Node(Endpoint endpoint) {
+        this.endpoint = endpoint;
+        key = endpoint.getValue();
+        p = endpoint.getP();
     }
 
     public Node getParent(){
-        return null;
+        return parent;
     }
 
     public Node getLeft(){
 
-        return null;
+        return left;
     }
 
     public Node getRight(){
 
-        return null;
+        return right;
     }
 
     public int getKey(){
 
-        return 0;
+        return key;
     }
 
     public int getP(){
 
-        return 0;
+        return p;
     }
 
     public int getVal(){
 
-        return 0;
+        return val;
     }
 
     public int getMaxVal(){
 
-        return 0;
+        return maxVal;
     }
 
     public Endpoint getEndpoint(){
 
-        return null;
+        return endpoint;
     }
 
     public Endpoint getEmax(){
 
-        return null;
+        return eMax;
     }
 
     public int getColor(){

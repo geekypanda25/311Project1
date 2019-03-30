@@ -1,6 +1,6 @@
 public class Endpoint {
 
-    private int value;
+    private int value = -1, p = 0;
 
 
     /**
@@ -8,8 +8,9 @@ public class Endpoint {
      * @param value
      * The value of the Endpoint given by intervalInsert()
      */
-    public Endpoint(int value) {
+    public Endpoint(int value, int p) {
         this.value = value;
+        this.p = p;
     }
 
 
@@ -20,5 +21,10 @@ public class Endpoint {
      */
     public int getValue() {
         return value;
+    }
+
+
+    public int getP() {
+        return p;
     }
 }
