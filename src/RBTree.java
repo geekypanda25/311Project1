@@ -9,6 +9,7 @@ public class RBTree{
         size = 0;
         height = 0;
         NILNode = new Node(-1);
+        root = NILNode;
     }
 
     public Node getRoot(){
