@@ -121,41 +121,41 @@ public class RBTree{
             if (node.right.left != NILNode) {
                 node.right.left.getParent() = node;
             }
-            node.right = node.right.left;
-            node.getParent().left = node;
+            node.setRight(node.getRight().getLeft());
+            node.getParent().setLeft(node);
         } else {//Need to rotate root
-            Node right = root.right;
-            root.right = right.left;
-            right.left.getParent() = root;
-            root.getParent() = right;
-            right.left = root;
-            right.getParent() = NILNode;
+            Node right = root.getRight();
+            root.setRight(right.getLeft());
+            right.getLeft().setParent(root);
+            root.setParent(right);
+            right.setLeft(root);
+            right.setParent(NILNode);
             root = right;
         }
     }
 
     public void rotateRight(Node node) {
         if (node.getParent() != NILNode) {
-            if (node == node.getParent().left) {
-                node.getParent().left = node.left;
+            if (node == node.getParent().getLeft()) {
+                node.getParent().setLeft(node.getLeft());
             } else {
-                node.getParent().right = node.left;
+                node.getParent().setRight(node.getLeft());
             }
 
-            node.left.getParent() = node.getParent();
-            node.getParent() = node.left;
-            if (node.left.right != NILNode) {
-                node.left.right.getParent() = node;
+            node.getLeft().setParent(node.getParent());
+            node.setParent(node.getLeft());
+            if (node.getLeft().getRight() != NILNode) {
+                node.getLeft().getRight().setParent(node);
             }
-            node.left = node.left.right;
-            node.getParent().right = node;
+            node.setLeft(node.getLeft().getRight());
+            node.getParent().setRight(node);
         } else {//Need to rotate root
-            Node left = root.left;
-            root.left = root.left.right;
-            left.right.getParent() = root;
-            root.getParent() = left;
-            left.right = root;
-            left.getParent() = NILNode;
+            Node left = root.getLeft();
+            root.setLeft(root.getLeft().getRight());
+            left.getRight().setParent(root);
+            root.setParent(left);
+            left.setRight(root);
+            left.setParent(NILNode);
             root = left;
         }
     }
