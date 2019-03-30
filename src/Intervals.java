@@ -37,5 +37,4 @@ public class Intervals {
 
         return null; // temp
     }
-
 }

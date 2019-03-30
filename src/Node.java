@@ -1,7 +1,12 @@
 public class Node {
 
-    private int key = -1, color = 1;
+    private final int RED = 0;
+    private final int BLACK = 1;
+
     private Node left = null, right = null, parent = null;
+    private int key = -1, p = 0, val = -1, maxVal = -1, color = BLACK;
+    private Endpoint endpoint, eMax;
+
 
     public Node(int key) {
         this.key = key;
