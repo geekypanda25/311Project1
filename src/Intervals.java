@@ -17,8 +17,8 @@ public class Intervals {
     public void intervalInsert(int a, int b) {
 
         // creates two new Endpoint objects based on the endpoint values
-        Endpoint leftE = new Endpoint(a);
-        Endpoint rightE = new Endpoint(b);
+        Endpoint leftE = new Endpoint(a, 1);
+        Endpoint rightE = new Endpoint(b, -1);
 
         // add new Interval object to the IntervalArray
         currInterval = new Interval(leftE, rightE, currID);

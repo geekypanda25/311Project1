@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.*;
+
 import static org.junit.Assert.*;
 
 public class RBTreeTest {
@@ -49,7 +51,7 @@ public class RBTreeTest {
     public void testGetNILNode() {
         Node nilNode = tree.getNILNode();
         assertTrue(nilNode.isNil());
-        assertEquals(nilNode.getColorInEnum(), Color.BLACK);
+        assertEquals(nilNode.getColor(), 1);
         tree.insert(node1);
         assertEquals(tree.getNILNode(), nilNode);   // NIL node shouldn't change after insert
     }

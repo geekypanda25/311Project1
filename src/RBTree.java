@@ -11,10 +11,9 @@ public class RBTree{
     public RBTree(){
         size = 0;
         height = 0;
-        NILNode = new Node(-1);
+        NILNode = new Node(new Endpoint(-1, 0));
         root = NILNode;
     }
-
     public Node getRoot(){
         return root;
     }
@@ -31,30 +30,30 @@ public class RBTree{
         return height;
     }
 
-    private void insert(Node node) {
+    public void insert(Node node) {
         Node temp = root;
         if (root == NILNode) {
             root = node;
-            node.getColor() = BLACK;
-            node.getParent() = NILNode;
+            node.setColor(BLACK);
+            node.setParent(NILNode);
         } else {
-            node.getColor() = RED;
+            node.setColor(RED);
             while (true) {
-                if (node.key < temp.key) {
-                    if (temp.left == NILNode) {
-                        temp.left = node;
-                        node.getParent() = temp;
+                if (node.getKey() < temp.getKey()) {
+                    if (temp.getLeft() == NILNode) {
+                        temp.setLeft(node);
+                        node.setParent(temp);
                         break;
                     } else {
-                        temp = temp.left;
+                        temp = temp.getLeft();
                     }
-                } else if (node.key >= temp.key) {
-                    if (temp.right == NILNode) {
-                        temp.right = node;
-                        node.getParent() = temp;
+                } else if (node.getKey() >= temp.getKey()) {
+                    if (temp.getRight() == NILNode) {
+                        temp.setRight(node);
+                        node.setParent(temp);
                         break;
                     } else {
-                        temp = temp.right;
+                        temp = temp.getRight();
                     }
                 }
             }
@@ -63,7 +62,7 @@ public class RBTree{
     }
 
     //Takes as argument the newly inserted node
-    private void fixTree(Node node) {
+    public void fixTree(Node node) {
         while (node.getParent().getColor() == RED) {
             Node uncle = NILNode;
             if (node.getParent() == node.getParent().getParent().left) {
@@ -110,7 +109,7 @@ public class RBTree{
         root.getColor() = BLACK;
     }
 
-    void rotateLeft(Node node) {
+    public void rotateLeft(Node node) {
         if (node.getParent() != NILNode) {
             if (node == node.getParent().left) {
                 node.getParent().left = node.right;
@@ -135,7 +134,7 @@ public class RBTree{
         }
     }
 
-    void rotateRight(Node node) {
+    public void rotateRight(Node node) {
         if (node.getParent() != NILNode) {
             if (node == node.getParent().left) {
                 node.getParent().left = node.left;

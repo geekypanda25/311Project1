@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Node {
 
     private final int RED = 0;
@@ -61,5 +63,30 @@ public class Node {
     public int getColor(){
 
         return color;
+    }
+
+    public boolean isNil() {
+        return (this.key == -1);
+    }
+
+    public void setColor(int color) {
+        if(color == BLACK) {
+            this.color = BLACK;
+        }
+        else {
+            this.color = RED;
+        }
+    }
+
+    public void setParent(Node node) {
+        this.parent = node;
+    }
+
+    public void setLeft(Node node) {
+        this.left = node;
+    }
+
+    public void setRight(Node node) {
+        this.right = node;
     }
 }
