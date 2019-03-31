@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="469633c0-6367-40a6-a5ca-663ae9c883ae" name="Default Changelist" comment="new1">
+    <list default="true" id="469633c0-6367-40a6-a5ca-663ae9c883ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RBTree.java" afterDir="false" />
     </list>
@@ -32,13 +32,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="331" />
+          <entry key="java" value="333" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="331" />
+          <entry key="JAVA" value="333" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -95,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/src/RBTree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
               <folding>
                 <element signature="e#370#371#0" expanded="true" />
                 <element signature="e#397#398#0" expanded="true" />
@@ -175,7 +175,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554058935358" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554059759074" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -326,7 +326,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553818947532</updated>
-      <workItem from="1553818949966" duration="4414000" />
+      <workItem from="1553818949966" duration="5083000" />
     </task>
     <task id="LOCAL-00001" summary="new1">
       <created>1553824984110</created>
@@ -349,11 +349,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554054660068</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="new1">
+      <created>1554058957029</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554058957029</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4414000" />
+    <option name="totallyTimeSpent" value="5083000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -375,11 +382,11 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24236111" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Messages" sideWeight="0.49930555" visible="true" weight="0.32902467" />
+      <window_info anchor="bottom" id="Messages" sideWeight="0.49930555" weight="0.08343126" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50069445" side_tool="true" visible="true" weight="0.32902467" />
+      <window_info active="true" anchor="bottom" id="Event Log" sideWeight="0.50069445" side_tool="true" visible="true" weight="0.09988249" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -451,7 +458,7 @@
     <entry file="file://$PROJECT_DIR$/src/RBTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
             <element signature="e#370#371#0" expanded="true" />
             <element signature="e#397#398#0" expanded="true" />

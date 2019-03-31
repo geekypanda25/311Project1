@@ -7,7 +7,7 @@ public class RBTree{
     private Node NILNode = null;
     private int size = -1;
     private int height = -1;
-    int sleft, sright, sparent;
+    //int sleft, sright, sparent;
 
     public RBTree(){
         size = 0;
@@ -43,16 +43,16 @@ public class RBTree{
             while (true) {
                 if (node.getKey() < temp.getKey()) {
                     if (temp.getLeft() == NILNode) {
-                        temp.setLeft(node); sleft=1;
-                        node.setParent(temp); sparent=1;
+                        temp.setLeft(node);
+                        node.setParent(temp);
                         break;
                     } else {
                         temp = temp.getLeft();
                     }
                 } else if (node.getKey() >= temp.getKey()) {
                     if (temp.getRight() == NILNode) {
-                        temp.setRight(node); sright=1;
-                        node.setParent(temp); sparent=1;
+                        temp.setRight(node);
+                        node.setParent(temp);
                         break;
                     } else {
                         temp = temp.getRight();
