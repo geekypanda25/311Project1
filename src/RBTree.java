@@ -7,12 +7,14 @@ public class RBTree{
     private Node NILNode = null;
     private int size = -1;
     private int height = -1;
+    int sleft, sright, sparent;
 
     public RBTree(){
         size = 0;
         height = 0;
         NILNode = new Node(new Endpoint(-1, 0));
         root = NILNode;
+
     }
     public Node getRoot(){
         return root;
@@ -41,16 +43,16 @@ public class RBTree{
             while (true) {
                 if (node.getKey() < temp.getKey()) {
                     if (temp.getLeft() == NILNode) {
-                        temp.setLeft(node);
-                        node.setParent(temp);
+                        temp.setLeft(node); sleft=1;
+                        node.setParent(temp); sparent=1;
                         break;
                     } else {
                         temp = temp.getLeft();
                     }
                 } else if (node.getKey() >= temp.getKey()) {
                     if (temp.getRight() == NILNode) {
-                        temp.setRight(node);
-                        node.setParent(temp);
+                        temp.setRight(node); sright=1;
+                        node.setParent(temp); sparent=1;
                         break;
                     } else {
                         temp = temp.getRight();
