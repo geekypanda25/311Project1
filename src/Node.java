@@ -1,51 +1,92 @@
+import java.awt.*;
+
 public class Node {
 
-    int key = -1, color = 1;
-    Node left = nil, right = nil, parent = nil;
+    private final int RED = 0;
+    private final int BLACK = 1;
 
-    Node(int key) {
-        this.key = key;
+    private Node left = null, right = null, parent = null;
+    private int key = -1, p = 0, val = -1, maxVal = -1, color = BLACK;
+    private Endpoint endpoint, eMax;
+
+
+    public Node(Endpoint endpoint) {
+        this.endpoint = endpoint;
+        key = endpoint.getValue();
+        p = endpoint.getP();
     }
 
-    Node getParent(){
+    public Node getParent(){
+        return parent;
+    }
 
-        }
+    public Node getLeft(){
 
-    Node getLeft(){
+        return left;
+    }
 
-        }
+    public Node getRight(){
 
-    Node getRight(){
+        return right;
+    }
 
-        }
+    public int getKey(){
 
-    int getKey(){
+        return key;
+    }
 
-        }
+    public int getP(){
 
-    int getP(){
+        return p;
+    }
 
-        }
+    public int getVal(){
 
-    int getVal(){
+        return val;
+    }
 
-        }
+    public int getMaxVal(){
 
-    int getMaxVal(){
+        return maxVal;
+    }
 
-        }
+    public Endpoint getEndpoint(){
 
-    Endpoint getEndpoint(){
+        return endpoint;
+    }
 
-        }
+    public Endpoint getEmax(){
 
-    Endpoint getEmax(){
+        return eMax;
+    }
 
-        }
-
-    int getColor(){
+    public int getColor(){
 
         return color;
+    }
 
+    public boolean isNil() {
+        return (this.key == -1);
+    }
+
+    public void setColor(int color) {
+        if(color == BLACK) {
+            this.color = BLACK;
         }
+        else {
+            this.color = RED;
+        }
+    }
+
+    public void setParent(Node node) {
+        this.parent = node;
+    }
+
+    public void setLeft(Node node) {
+        this.left = node;
+    }
+
+    public void setRight(Node node) {
+        this.right = node;
+    }
 }
