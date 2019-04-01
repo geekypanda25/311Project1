@@ -19,16 +19,41 @@ public class Intervals {
 
     public void intervalInsert(int a, int b) {
 
-        // creates two new Endpoint objects based on the endpoint values
-        Endpoint leftE = new Endpoint(a, 1);
-        Endpoint rightE = new Endpoint(b, -1);
+        if (b<a) {
+            int c = b;
+            b = a;
+            a = c;
+        }
 
-        // add new Interval object to the IntervalArray
-        currInterval = new Interval(leftE, rightE, currID);
-        IntervalArray.add(currInterval);
-        currID++;
+        intervals.add(new Interval(a,b,nextId));
+
+        Node n1 = new Node();
+        Node n2 = new Node();
+        Endpoint e1 = new Endpoint();
+        Endpoint e2 = new Endpoint();
+
+        e1.value=a;
+        e2.value=b;
+        e1.Id = nextId;
+        e2.Id = nextId;
+        e1.p = Endpoint.LEFT;
+        e2.p = Endpoint.RIGHT;
+        n1.key = e1;
+        n2.key = e2;
+
+        rbTree.RBInsert(n1);
+        rbTree.RBInsert(n2);
+
+        nodes.add(n1);
+        nodes.add(n2);
+
+        nId++;
     }
 
+    public boolean intervalDelete(int intervalID){
+
+        return false;
+    }
 
     public int findPOM() {
 
