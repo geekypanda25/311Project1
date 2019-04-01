@@ -61,6 +61,7 @@ public class RBTree{
             }
             fixTree(node);
         }
+        this.size++;
     }
 
     //Takes as argument the newly inserted node
