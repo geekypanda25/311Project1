@@ -6,10 +6,10 @@ public class RBTree{
     private final int RED = 0;
     private final int BLACK = 1;
 
-    private Node root = null;
-    private Node NILNode = null;
-    private int size = -1;
-    private int height = -1;
+    public Node root = null;
+    public Node NILNode = null;
+    public int size = -1;
+    public int height = -1;
 
 
     public RBTree(){
