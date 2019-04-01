@@ -3,16 +3,17 @@ import java.util.ArrayList;
 public class Intervals {
 
 
-    private int currID;
-    private Interval currInterval = null;
-    private ArrayList<Interval> IntervalArray = new ArrayList<>();
+    public int currID;
+    public RBTree rbTree;
+    public ArrayList<Node> nodes;
+    public ArrayList<Interval> IntervalArray;
 
 
     public Intervals(){
-        nId = 0;
+        currID = 0;
         rbTree = new RBTree();
         nodes = new ArrayList<>();
-        intervals = new ArrayList<>();
+        IntervalArray = new ArrayList<>();
 
     }
 
@@ -25,7 +26,7 @@ public class Intervals {
             first = last;
         }
 
-        intervals.add(new Interval(first,mid,nId));
+        IntervalArray.add(new Interval(first,mid,currID));
 
         Node n1 = new Node();
         Node n2 = new Node();
@@ -34,8 +35,8 @@ public class Intervals {
 
         e1.value=first;
         e2.value=mid;
-        e1.Id = nId;
-        e2.Id = nId;
+        e1.Id = currID;
+        e2.Id = currID;
         e1.p = Endpoint.LEFT;
         e2.p = Endpoint.RIGHT;
         n1.key = e1;
@@ -47,7 +48,7 @@ public class Intervals {
         nodes.add(n1);
         nodes.add(n2);
 
-        nId++;
+        currID++;
     }
 
     public boolean intervalDelete(int intervalID){
