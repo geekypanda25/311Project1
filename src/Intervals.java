@@ -17,23 +17,23 @@ public class Intervals {
     }
 
 
-    public void intervalInsert(int a, int b) {
+    public void intervalInsert(int first, int mid) {
 
-        if (b<a) {
-            int c = b;
-            b = a;
-            a = c;
+        if (mid<first) {
+            int last = mid;
+            mid = first;
+            first = last;
         }
 
-        intervals.add(new Interval(a,b,nextId));
+        intervals.add(new Interval(first,mid,nextId));
 
         Node n1 = new Node();
         Node n2 = new Node();
         Endpoint e1 = new Endpoint();
         Endpoint e2 = new Endpoint();
 
-        e1.value=a;
-        e2.value=b;
+        e1.value=first;
+        e2.value=mid;
         e1.Id = nextId;
         e2.Id = nextId;
         e1.p = Endpoint.LEFT;
