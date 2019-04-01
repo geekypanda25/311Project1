@@ -8,33 +8,64 @@ public class Intervals {
     private ArrayList<Interval> IntervalArray = new ArrayList<>();
 
 
-    public Intervals() {
-        currID = 1;
+    public Intervals(){
+        nId = 0;
+        rbTree = new RBTree();
+        nodes = new ArrayList<>();
+        intervals = new ArrayList<>();
 
     }
 
 
-    public void intervalInsert(int a, int b) {
+    public void intervalInsert(int first, int mid) {
 
-        // creates two new Endpoint objects based on the endpoint values
-        Endpoint leftE = new Endpoint(a, 1);
-        Endpoint rightE = new Endpoint(b, -1);
+        if (mid<first) {
+            int last = mid;
+            mid = first;
+            first = last;
+        }
 
-        // add new Interval object to the IntervalArray
-        currInterval = new Interval(leftE, rightE, currID);
-        IntervalArray.add(currInterval);
-        currID++;
+        intervals.add(new Interval(first,mid,nextId));
+
+        Node n1 = new Node();
+        Node n2 = new Node();
+        Endpoint e1 = new Endpoint();
+        Endpoint e2 = new Endpoint();
+
+        e1.value=first;
+        e2.value=mid;
+        e1.Id = nextId;
+        e2.Id = nextId;
+        e1.p = Endpoint.LEFT;
+        e2.p = Endpoint.RIGHT;
+        n1.key = e1;
+        n2.key = e2;
+
+        rbTree.RBInsert(n1);
+        rbTree.RBInsert(n2);
+
+        nodes.add(n1);
+        nodes.add(n2);
+
+        nId++;
     }
 
+    public boolean intervalDelete(int intervalID){
+
+        return false;
+    }
 
     public int findPOM() {
 
-        return 0; // temp
+        if (rbTree.getSize() == 0) {
+            return 0;
+        }
+        return rbTree.getRoot().getMaxVal();
     }
 
 
     public RBTree getRBTree() {
 
-        return null; // temp
+        return rbTree;
     }
 }
