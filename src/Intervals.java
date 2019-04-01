@@ -8,7 +8,7 @@ public class Intervals {
     private ArrayList<Interval> IntervalArray = new ArrayList<>();
 
 
-    public Intervals() {
+    public Interval() {
         currID = 1;
 
     }
@@ -29,7 +29,10 @@ public class Intervals {
 
     public int findPOM() {
 
-        return 0; // temp
+        if (rbTree.getSize() == 0) {
+            return 0;
+        }
+        return rbTree.getRoot().getMaxVal();
     }
 
 
