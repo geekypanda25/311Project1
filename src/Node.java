@@ -6,9 +6,9 @@ public class Node {
     public final int BLACK = 1;
 
 
-    private Node left = null, right = null, parent = null;
-    private int key = -1, p = 0, val = -1, maxVal = -1, color = BLACK;
-    private Endpoint endpoint, eMax;
+    public Node left = null, right = null, parent = null;
+    public int key = -1, p = 0, val = -1, maxVal = -1, color = BLACK;
+    public Endpoint endpoint, eMax;
 
 
     public Node(Endpoint endpoint) {

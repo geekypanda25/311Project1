@@ -42,8 +42,8 @@ public class Intervals {
         n1.key = e1;
         n2.key = e2;
 
-        rbTree.RBInsert(n1);
-        rbTree.RBInsert(n2);
+        rbTree.insert(n1);
+        rbTree.insert(n2);
 
         nodes.add(n1);
         nodes.add(n2);

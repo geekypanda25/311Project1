@@ -33,6 +33,7 @@ public class RBTree{
     }
 
     public void insert(Node node) {
+        size++;
         Node temp = root;
         if (root == NILNode) {
             root = node;
@@ -60,8 +61,11 @@ public class RBTree{
                 }
             }
             fixTree(node);
+            node.setVal();
+            node.setMaxVal();
+            node.setEmax();
         }
-        this.size++;
+
     }
 
     //Takes as argument the newly inserted node

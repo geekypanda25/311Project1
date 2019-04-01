@@ -1,6 +1,6 @@
 public class Endpoint {
 
-    private int value = -1, p = 0;
+    public int value = -1, p = 0;
 
     public final static int LEFT = 1;
     public final static int RIGHT = -1;
