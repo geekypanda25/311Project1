@@ -41,6 +41,6 @@ public class Intervals {
 
     public RBTree getRBTree() {
 
-        return null; // temp
+        return rbTree;
     }
 }
