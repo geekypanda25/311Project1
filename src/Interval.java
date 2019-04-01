@@ -1,7 +1,8 @@
 public class Interval {
 
     private int ID;
-    private Endpoint left, right;
+    //private Endpoint left, right;
+    private int x, y, id;
 
 
     /**
@@ -14,20 +15,20 @@ public class Interval {
      * @param ID
      * The Interval's unique ID
      */
-    public Interval(Endpoint left, Endpoint right, int ID) {
-        this.left = left;
-        this.right = right;
-        this.ID = ID;
+    public Interval(int left, int right, int ID) {
+        this.x = left;
+        this.y = right;
+        this.id = ID;
     }
 
 
-    public Endpoint getLeft() {
-        return left;
+    public int getLeft() {
+        return x;
     }
 
 
-    public Endpoint getRight() {
-        return right;
+    public int getRight() {
+        return y;
     }
 
 

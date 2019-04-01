@@ -2,8 +2,9 @@ import java.awt.*;
 
 public class Node {
 
-    private final int RED = 0;
-    private final int BLACK = 1;
+    public final int RED = 0;
+    public final int BLACK = 1;
+
 
     private Node left = null, right = null, parent = null;
     private int key = -1, p = 0, val = -1, maxVal = -1, color = BLACK;
