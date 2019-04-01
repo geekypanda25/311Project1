@@ -25,7 +25,7 @@ public class Intervals {
             first = last;
         }
 
-        intervals.add(new Interval(first,mid,nextId));
+        intervals.add(new Interval(first,mid,nId));
 
         Node n1 = new Node();
         Node n2 = new Node();
@@ -34,8 +34,8 @@ public class Intervals {
 
         e1.value=first;
         e2.value=mid;
-        e1.Id = nextId;
-        e2.Id = nextId;
+        e1.Id = nId;
+        e2.Id = nId;
         e1.p = Endpoint.LEFT;
         e2.p = Endpoint.RIGHT;
         n1.key = e1;
