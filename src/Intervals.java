@@ -19,22 +19,22 @@ public class Intervals {
     }
 
 
-    public void intervalInsert(int first, int mid) {
-        if (mid<first) {
-            int last = mid;
-            mid = first;
-            first = last;
+    public void intervalInsert(int a, int b) {
+        if (b<a) {
+            int last = b;
+            b = a;
+            a = last;
         }
 
-        IntervalArray.add(new Interval(first,mid,currID));
+        IntervalArray.add(new Interval(a,b,currID));
 
         Node n1 = new Node();
         Node n2 = new Node();
-        Endpoint e1 = new Endpoint(first, Endpoint.LEFT);
-        Endpoint e2 = new Endpoint(mid, Endpoint.RIGHT);
+        Endpoint e1 = new Endpoint(a, Endpoint.LEFT);
+        Endpoint e2 = new Endpoint(b, Endpoint.RIGHT);
 
-        e1.value=first;
-        e2.value=mid;
+        e1.value=a;
+        e2.value=b;
         e1.Id = currID;
         e2.Id = currID;
         e1.p = Endpoint.LEFT;

@@ -7,24 +7,11 @@ public class Node {
     public final int RED = 0;
     public final int BLACK = 1;
 
-
-    Endpoint key = null;
-
     public Node left = null, right = null, parent = null;
     public int color = BLACK;
     int val, maxval;
     Endpoint exmax;
-
-
-//    private int key = -1, p = 0, val = -1, maxVal = -1, color = BLACK;
-//    private Endpoint endpoint, eMax;
-
-
-//    public Node(Endpoint endpoint) {
-//        this.endpoint = endpoint;
-//        key = endpoint.getValue();
-//        p = endpoint.getP();
-//    }
+    Endpoint key = null;
 
     public Node getParent(){
         return parent;
@@ -83,18 +70,17 @@ public class Node {
         return exmax;
     }
 
-    public void setEmax(){ //occurs at the endpoint where maxVal would occur, according to post on Piazza
-        int max =this.getMaxVal();/* Math.max(Math.max(this.getLeft().maxval, this.getLeft().getVal() + this.getP()),
-    			this.getLeft().getVal()+this.getP() + this.getRight().maxval);*/
+    public void setEmax(){
+        int maxValue = this.getMaxVal();
 
-        if(max == this.getLeft().maxval /*&& this.getLeft().getEndpoint() != null*/ ){
+        if(maxValue == this.getLeft().maxval){
             exmax = this.getLeft().getEndpoint();
         }
-        else if((max ==  this.getLeft().getVal() + this.getP()) /*&&  this.getEndpoint() != null*/){
+        else if((maxValue ==  this.getLeft().getVal() + this.getP())){
             exmax = this.getEndpoint();
         }
 
-        else if((max == this.getLeft().getVal()+this.getP() + this.getRight().maxval )/*&& this.getRight().getEndpoint() != null*/){
+        else if((maxValue == this.getLeft().getVal()+this.getP() + this.getRight().maxval)){
             exmax = this.getRight().getEndpoint();
         }
         else {
@@ -111,28 +97,3 @@ public class Node {
     }
 }
 
-//    public boolean isNil() {
-//        return (this.key == -1);
-//    }
-
-//    public void setColor(int color) {
-//        if(color == BLACK) {
-//            this.color = BLACK;
-//        }
-//        else {
-//            this.color = RED;
-//        }
-//    }
-//
-//    public void setParent(Node node) {
-//        this.parent = node;
-//    }
-//
-//    public void setLeft(Node node) {
-//        this.left = node;
-//    }
-//
-//    public void setRight(Node node) {
-//        this.right = node;
-//    }
-//}
