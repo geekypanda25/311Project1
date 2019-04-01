@@ -1,3 +1,6 @@
+/**
+ * @author Benjamin Ferreira, John Schnoebelen, Shlok Singh
+ */
 public class RBTree{
 
     private final int RED = 0;
@@ -7,12 +10,12 @@ public class RBTree{
     private Node NILNode = null;
     private int size = -1;
     private int height = -1;
-    //int sleft, sright, sparent;
+
 
     public RBTree(){
         size = 0;
         height = 0;
-        NILNode = new Node(new Endpoint(-1, 0));
+        NILNode = new Node();
         root = NILNode;
 
     }
@@ -33,140 +36,132 @@ public class RBTree{
     }
 
     public void insert(Node node) {
-        size++;
         Node temp = root;
         if (root == NILNode) {
             root = node;
-            node.setColor(BLACK);
-            node.setParent(NILNode);
+            node.color = BLACK;
+            node.parent = NILNode;
         } else {
-            node.setColor(RED);
+            node.color = RED;
             while (true) {
-                if (node.getKey() < temp.getKey()) {
-                    if (temp.getLeft() == NILNode) {
-                        temp.setLeft(node);
-                        node.setParent(temp);
+                if (node.key.value < temp.key.value) {
+                    if (temp.left == NILNode) {
+                        temp.left = node;
+                        node.parent = temp;
                         break;
                     } else {
-                        temp = temp.getLeft();
+                        temp = temp.left;
                     }
-                } else if (node.getKey() >= temp.getKey()) {
-                    if (temp.getRight() == NILNode) {
-                        temp.setRight(node);
-                        node.setParent(temp);
+                } else if (node.key.value >= temp.key.value) {
+                    if (temp.right == NILNode) {
+                        temp.right = node;
+                        node.parent = temp;
                         break;
                     } else {
-                        temp = temp.getRight();
+                        temp = temp.right;
                     }
                 }
             }
             fixTree(node);
-            node.setVal();
-            node.setMaxVal();
-            node.setEmax();
         }
-
     }
 
     //Takes as argument the newly inserted node
     public void fixTree(Node node) {
-        while (node.getParent().getColor() == RED) {
+        while (node.parent.color == RED) {
             Node uncle = NILNode;
-            if (node.getParent() == node.getParent().getParent().getLeft()) {
-                uncle = node.getParent().getParent().getRight();
+            if (node.parent == node.parent.parent.left) {
+                uncle = node.parent.parent.right;
 
-                if (uncle != NILNode && uncle.getColor() == RED) {
-                    node.getParent().setColor(BLACK);
-                    uncle.setColor(BLACK);
-                    node.getParent().getParent().setColor(RED);
-                    node = node.getParent().getParent();
+                if (uncle != NILNode && uncle.color == RED) {
+                    node.parent.color = BLACK;
+                    uncle.color = BLACK;
+                    node.parent.parent.color = RED;
+                    node = node.parent.parent;
                     continue;
                 }
-                if (node == node.getParent().getRight()) {
+                if (node == node.parent.right) {
                     //Double rotation needed
-                    node = node.getParent();
+                    node = node.parent;
                     rotateLeft(node);
                 }
-                node.getParent().setColor(BLACK);
-                node.getParent().getParent().setColor(RED);
+                node.parent.color = BLACK;
+                node.parent.parent.color = RED;
                 //if the "else if" code hasn't executed, this
                 //is a case where we only need a single rotation
-                rotateRight(node.getParent().getParent());
+                rotateRight(node.parent.parent);
             } else {
-                uncle = node.getParent().getParent().getLeft();
-                if (uncle != NILNode && uncle.getColor() == RED) {
-                    node.getParent().setColor(BLACK);
-                    uncle.setColor(BLACK);
-                    node.getParent().getParent().setColor(RED);
-                    node = node.getParent().getParent();
+                uncle = node.parent.parent.left;
+                if (uncle != NILNode && uncle.color == RED) {
+                    node.parent.color = BLACK;
+                    uncle.color = BLACK;
+                    node.parent.parent.color = RED;
+                    node = node.parent.parent;
                     continue;
                 }
-                if (node == node.getParent().getLeft()) {
+                if (node == node.parent.left) {
                     //Double rotation needed
-                    node = node.getParent();
+                    node = node.parent;
                     rotateRight(node);
                 }
-                node.getParent().setColor(BLACK);
-                node.getParent().getParent().setColor(RED);
+                node.parent.color = BLACK;
+                node.parent.parent.color = RED;
                 //if the "else if" code hasn't executed, this
                 //is a case where we only need a single rotation
-                rotateLeft(node.getParent().getParent());
+                rotateLeft(node.parent.parent);
             }
         }
-        root.setColor(BLACK);
+        root.color = BLACK;
     }
 
     public void rotateLeft(Node node) {
-        if (node.getParent() != NILNode) {
-            if (node == node.getParent().getLeft()) {
-                node.getParent().setLeft(node.getRight());
+        if (node.parent != NILNode) {
+            if (node == node.parent.left) {
+                node.parent.left = node.right;
             } else {
-                node.getParent().setRight(node.getRight());
+                node.parent.right = node.right;
             }
-            node.getRight().setParent(node.getParent());
-            node.setParent(node.getRight());
-            if (node.getRight().getLeft() != NILNode) {
-                node.getRight().getLeft().setParent(node);
+            node.right.parent = node.parent;
+            node.parent = node.right;
+            if (node.right.left != NILNode) {
+                node.right.left.parent = node;
             }
-            node.setRight(node.getRight().getLeft());
-            node.getParent().setLeft(node);
+            node.right = node.right.left;
+            node.parent.left = node;
         } else {//Need to rotate root
-            Node right = root.getRight();
-            root.setRight(right.getLeft());
-            right.getLeft().setParent(root);
-            root.setParent(right);
-            right.setLeft(root);
-            right.setParent(NILNode);
+            Node right = root.right;
+            root.right = right.left;
+            right.left.parent = root;
+            root.parent = right;
+            right.left = root;
+            right.parent = NILNode;
             root = right;
         }
     }
 
     public void rotateRight(Node node) {
-        if (node.getParent() != NILNode) {
-            if (node == node.getParent().getLeft()) {
-                node.getParent().setLeft(node.getLeft());
+        if (node.parent != NILNode) {
+            if (node == node.parent.left) {
+                node.parent.left = node.left;
             } else {
-                node.getParent().setRight(node.getLeft());
+                node.parent.right = node.left;
             }
 
-            node.getLeft().setParent(node.getParent());
-            node.setParent(node.getLeft());
-            if (node.getLeft().getRight() != NILNode) {
-                node.getLeft().getRight().setParent(node);
+            node.left.parent = node.parent;
+            node.parent = node.left;
+            if (node.left.right != NILNode) {
+                node.left.right.parent = node;
             }
-            node.setLeft(node.getLeft().getRight());
-            node.getParent().setRight(node);
+            node.left = node.left.right;
+            node.parent.right = node;
         } else {//Need to rotate root
-            Node left = root.getLeft();
-            root.setLeft(root.getLeft().getRight());
-            left.getRight().setParent(root);
-            root.setParent(left);
-            left.setRight(root);
-            left.setParent(NILNode);
+            Node left = root.left;
+            root.left = root.left.right;
+            left.right.parent = root;
+            root.parent = left;
+            left.right = root;
+            left.parent = NILNode;
             root = left;
         }
     }
-
-
-
 }

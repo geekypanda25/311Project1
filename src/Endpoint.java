@@ -1,3 +1,6 @@
+/**
+ * @author Benjamin Ferreira, John Schnoebelen, Shlok Singh
+ */
 public class Endpoint {
 
     public int value = -1, p = 0;

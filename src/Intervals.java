@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-
+/**
+ * @author Benjamin Ferreira, John Schnoebelen, Shlok Singh
+ */
 public class Intervals {
 
 
@@ -14,12 +16,10 @@ public class Intervals {
         rbTree = new RBTree();
         nodes = new ArrayList<>();
         IntervalArray = new ArrayList<>();
-
     }
 
 
     public void intervalInsert(int first, int mid) {
-
         if (mid<first) {
             int last = mid;
             mid = first;
@@ -30,8 +30,8 @@ public class Intervals {
 
         Node n1 = new Node();
         Node n2 = new Node();
-        Endpoint e1 = new Endpoint();
-        Endpoint e2 = new Endpoint();
+        Endpoint e1 = new Endpoint(first, Endpoint.LEFT);
+        Endpoint e2 = new Endpoint(mid, Endpoint.RIGHT);
 
         e1.value=first;
         e2.value=mid;

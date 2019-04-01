@@ -1,5 +1,7 @@
 import java.awt.*;
-
+/**
+ * @author Benjamin Ferreira, John Schnoebelen, Shlok Singh
+ */
 public class Node {
 
     public final int RED = 0;

@@ -74,7 +74,7 @@ public class RBOperationsTest {
         assertEquals(left.getColor(), 0);
         assertEquals(right.getColor(), 0);
 
-        // Test children's children are nil
+        // Test children's children are NILNode
         assertTrue(left.getLeft().isNil());
         assertTrue(left.getRight().isNil());
         assertTrue(right.getLeft().isNil());
@@ -104,7 +104,7 @@ public class RBOperationsTest {
         assertEquals(left.getColor(), 0);
         assertEquals(right.getColor(), 0);
 
-        // Test grandchildren are nil
+        // Test grandchildren are NILNode
         assertTrue(left.getLeft().isNil());
         assertTrue(left.getRight().isNil());
         assertTrue(right.getLeft().isNil());
@@ -133,7 +133,7 @@ public class RBOperationsTest {
         assertEquals(left.getColor(), 0);
         assertEquals(right.getColor(), 0);
 
-        // Test grandchildren are nil
+        // Test grandchildren are NILNode
         assertTrue(left.getLeft().isNil());
         assertTrue(left.getRight().isNil());
         assertTrue(right.getLeft().isNil());

@@ -1,3 +1,6 @@
+/**
+ * @author Benjamin Ferreira, John Schnoebelen, Shlok Singh
+ */
 public class Interval {
 
     private int ID;
