@@ -8,8 +8,11 @@ public class Intervals {
     private ArrayList<Interval> IntervalArray = new ArrayList<>();
 
 
-    public Interval() {
-        currID = 1;
+    public Intervals(){
+        nId = 0;
+        rbTree = new RBTree();
+        nodes = new ArrayList<>();
+        intervals = new ArrayList<>();
 
     }
 
